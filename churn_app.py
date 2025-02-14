@@ -7,6 +7,16 @@ import tensorflow as tf
 
 
 # Load the encoders and scalar
+with open('onehotencoder_geo.pkl','rb') as file:
+    onehotencoder_geo = pickle.load(file)
+
+with open('labelencoder_gender.pkl', 'rb') as file:
+    labelencoder_gender = pickle.load(file)
+
+with open('scalar.pkl', 'rb') as file:
+    scaler = pickle.load(file)
+
+"""""
 with open('/Users/pkadala/Documents/mystuff/AI/GenAI/myexercises/ann/onehotencoder_geo.pkl','rb') as file:
     onehotencoder_geo = pickle.load(file)
 
@@ -16,6 +26,7 @@ with open('/Users/pkadala/Documents/mystuff/AI/GenAI/myexercises/ann/labelencode
 with open('/Users/pkadala/Documents/mystuff/AI/GenAI/myexercises/ann/scalar.pkl', 'rb') as file:
     scaler = pickle.load(file)
 
+"""""
 # Load trained model
 model = tf.keras.models.load_model('/Users/pkadala/Documents/mystuff/AI/GenAI/myexercises/ann/ann_coassification_model.h5')
 print(model.summary())
@@ -74,4 +85,3 @@ if prediction_proba > 0.5:
     st.write('The customer is likey to churn')
 else:
     st.write('The customer is not likey to churn')    
-
