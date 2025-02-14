@@ -28,7 +28,7 @@ with open('/Users/pkadala/Documents/mystuff/AI/GenAI/myexercises/ann/scalar.pkl'
 
 """""
 # Load trained model
-model = tf.keras.models.load_model('/Users/pkadala/Documents/mystuff/AI/GenAI/myexercises/ann/ann_coassification_model.h5')
+model = tf.keras.models.load_model('ann_coassification_model.h5')
 print(model.summary())
 
 
